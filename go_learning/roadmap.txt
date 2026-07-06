@@ -1,0 +1,11 @@
+Setup — install Go, understand the toolchain
+Hello World — and why every line is there
+Variables, types, basic syntax
+Functions
+Structs (Go's way of grouping data — like a lightweight class)
+Error handling (Go does this differently than most languages — important!)
+JSON decoding (turning API responses into Go data)
+Making HTTP requests (calling the weather API)
+Building a simple backend server (so other things can call your app)
+Putting it all together — the final project
+
