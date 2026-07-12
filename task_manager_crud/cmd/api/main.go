@@ -10,6 +10,8 @@ import (
 	"github.com/Thenuja-Hansana/evolza-training-program/task_manager_crud/internal/database"
 
 	"github.com/Thenuja-Hansana/evolza-training-program/task_manager_crud/internal/controllers"
+
+	"github.com/Thenuja-Hansana/evolza-training-program/task_manager_crud/internal/routes"
 )
 
 func main() {
@@ -38,7 +40,8 @@ func main() {
 		port = "8080" // fallback 
 	}
 
-	log.Fatal(app.Listen(":" + port))
+	// 4. THIS IS THE CRITICAL LINE: It loads all your CRUD routes
+	routes.SetupTaskRoutes(app)
 
 	// start the server 
 	log.Fatal(app.Listen(":" + port))
