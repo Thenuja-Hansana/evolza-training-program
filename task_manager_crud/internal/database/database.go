@@ -47,7 +47,7 @@ func ConnectDB() {
 
 	log.Println("Successfully connected to MongoDB!")
 
-	// 7. Store the client and specific collection in exported variables.
+	// Store the client and specific collection 
 	Client = client
 	TaskCollection = client.Database(dbName).Collection("tasks")
 }
