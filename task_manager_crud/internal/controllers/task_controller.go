@@ -39,11 +39,11 @@ func CreateTask(c *fiber.Ctx) error {
 		task.Status = "pending" // Default status
 	}
 
-	// Create a context with  for the database operation
+	// Context with  for the database operation
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	// Insert the task into the database using global TaskCollection
+	// Insert the task into the database 
 	_, err := database.TaskCollection.InsertOne(ctx, task)
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
