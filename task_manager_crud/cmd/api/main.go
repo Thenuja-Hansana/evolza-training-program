@@ -40,7 +40,6 @@ func main() {
 		port = "8080" // fallback 
 	}
 
-	// 4. THIS IS THE CRITICAL LINE: It loads all your CRUD routes
 	routes.SetupTaskRoutes(app)
 
 	// start the server 
