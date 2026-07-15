@@ -12,15 +12,20 @@ import (
 	"github.com/Thenuja-Hansana/evolza-training-program/task_manager_crud/internal/controllers"
 
 	"github.com/Thenuja-Hansana/evolza-training-program/task_manager_crud/internal/routes"
+
+	"github.com/gofiber/fiber/v2/middleware/cors"
 )
 
 func main() {
 	// Intialise the database connection
 	database.ConnectDB()
 
+	
 
 	// intialize the server
 	app := fiber.New()
+
+	app.Use(cors.New())
 
 	// create a health check request 
 	// "/health" - endpoint 
